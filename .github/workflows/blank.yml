@@ -24,4 +24,12 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          openapi-generator-cli generate -g rust -i https://www.thebluealliance.com/swagger/api_v3.json -o /generated/rust-client
+          openapi-generator-cli generate -g rust -i https://www.thebluealliance.com/swagger/api_v3.json -o generated/rust-client
+
+      - name: Commit Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add generated/rust-client
+          git commit -m "Generated Rust client library"
+          git push
