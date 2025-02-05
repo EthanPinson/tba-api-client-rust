@@ -23,7 +23,7 @@ jobs:
         run: npm i @openapitools/openapi-generator-cli -g
 
       - name: Delete Old Stuff
-        run: rm generated/rust-client
+        run: rm -r generated/rust-client
 
       - name: Run a multi-line script
         run: |
