@@ -20,7 +20,7 @@ jobs:
           node-version: 'latest'
 
       - name: Install OpenAPI Generator
-        run: npm i @openapitools/openapi-generator-cli
+        run: npm i @openapitools/openapi-generator-cli -g
 
       - name: Run a multi-line script
         run: |
