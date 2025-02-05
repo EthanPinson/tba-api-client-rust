@@ -15,12 +15,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 
+      - name: Install OpenAPI Generator
+        run: npm i @openapitools/openapi-generator-cli
+
       - name: Run a multi-line script
         run: |
-          npm i @openapitools/openapi-generator-cli
+          openapi-generator-cli generate -g rust -i https://www.thebluealliance.com/swagger/api_v3.json -o /generated/rust-client
