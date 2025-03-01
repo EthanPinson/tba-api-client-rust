@@ -22,6 +22,9 @@ pub struct EventInfo {
     /// A list of webcast URLs to set for this event. This will overwrite the existing webcast list
     #[serde(rename = "webcasts", skip_serializing_if = "Option::is_none")]
     pub webcasts: Option<Vec<models::EventInfoWebcastsInner>>,
+    /// A mapping of temp key --> remapped key (including B team keys)
+    #[serde(rename = "remap_teams", skip_serializing_if = "Option::is_none")]
+    pub remap_teams: Option<std::collections::HashMap<String, String>>,
 }
 
 impl EventInfo {
@@ -30,6 +33,7 @@ impl EventInfo {
             first_code: None,
             playoff_type: None,
             webcasts: None,
+            remap_teams: None,
         }
     }
 }

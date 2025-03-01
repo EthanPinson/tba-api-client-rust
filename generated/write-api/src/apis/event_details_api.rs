@@ -10,9 +10,9 @@
 
 
 use reqwest;
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize, de::Error as _};
 use crate::{apis::ResponseContent, models};
-use super::{Error, configuration};
+use super::{Error, configuration, ContentType};
 
 
 /// struct for typed errors of method [`update_event_info`]
@@ -25,7 +25,7 @@ pub enum UpdateEventInfoError {
 }
 
 
-/// An endpoint to overwrite certain event fields
+/// An endpoint to overwrite certain event fields. All fields are optional, set only the ones you wish to update
 pub async fn update_event_info(configuration: &configuration::Configuration, event_key: &str, event_info: models::EventInfo) -> Result<(), Error<UpdateEventInfoError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_event_key = event_key;

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > update_event_info(event_key, event_info)
 Update top-level properties for the event
 
-An endpoint to overwrite certain event fields
+An endpoint to overwrite certain event fields. All fields are optional, set only the ones you wish to update
 
 ### Parameters
 
