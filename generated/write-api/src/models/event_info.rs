@@ -25,6 +25,9 @@ pub struct EventInfo {
     /// A mapping of temp key --> remapped key (including B team keys)
     #[serde(rename = "remap_teams", skip_serializing_if = "Option::is_none")]
     pub remap_teams: Option<std::collections::HashMap<String, String>>,
+    /// Timezone name for the event
+    #[serde(rename = "timezone", skip_serializing_if = "Option::is_none")]
+    pub timezone: Option<String>,
 }
 
 impl EventInfo {
@@ -34,6 +37,7 @@ impl EventInfo {
             playoff_type: None,
             webcasts: None,
             remap_teams: None,
+            timezone: None,
         }
     }
 }

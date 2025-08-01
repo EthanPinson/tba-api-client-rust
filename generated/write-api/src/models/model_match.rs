@@ -30,9 +30,15 @@ pub struct Match {
     /// String in the format \"(H)H:MM AM/PM\" for when the match will be played in the event's local timezone
     #[serde(rename = "time_str", skip_serializing_if = "Option::is_none")]
     pub time_str: Option<String>,
-    /// UTC time of match in ISO 8601 format (YYYY-MM-DDTHH:MM:SS)
+    /// UTC time of the match's scheduled time in ISO 8601 format (YYYY-MM-DDTHH:MM:SS)
     #[serde(rename = "time_utc", skip_serializing_if = "Option::is_none")]
     pub time_utc: Option<String>,
+    /// UTC time of when the match actually started in ISO 8601 format (YYYY-MM-DDTHH:MM:SS)
+    #[serde(rename = "actual_start_time_utc", skip_serializing_if = "Option::is_none")]
+    pub actual_start_time_utc: Option<String>,
+    /// UTC time of when the match results were shown to the audience in ISO 8601 format (YYYY-MM-DDTHH:MM:SS)
+    #[serde(rename = "post_results_time_utc", skip_serializing_if = "Option::is_none")]
+    pub post_results_time_utc: Option<String>,
     /// The name for the match, to be shown on the event page
     #[serde(rename = "display_name", skip_serializing_if = "Option::is_none")]
     pub display_name: Option<String>,
@@ -48,6 +54,8 @@ impl Match {
             score_breakdown: None,
             time_str: None,
             time_utc: None,
+            actual_start_time_utc: None,
+            post_results_time_utc: None,
             display_name: None,
         }
     }
