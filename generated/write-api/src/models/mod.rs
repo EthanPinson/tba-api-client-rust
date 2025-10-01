@@ -2,6 +2,8 @@ pub mod award;
 pub use self::award::Award;
 pub mod event_info;
 pub use self::event_info::EventInfo;
+pub mod event_info_disable_sync;
+pub use self::event_info_disable_sync::EventInfoDisableSync;
 pub mod event_info_webcasts_inner;
 pub use self::event_info_webcasts_inner::EventInfoWebcastsInner;
 pub mod model_match;

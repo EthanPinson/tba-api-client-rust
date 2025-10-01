@@ -52,6 +52,7 @@ Class | Method | HTTP request | Description
 
  - [Award](docs/Award.md)
  - [EventInfo](docs/EventInfo.md)
+ - [EventInfoDisableSync](docs/EventInfoDisableSync.md)
  - [EventInfoWebcastsInner](docs/EventInfoWebcastsInner.md)
  - [Match](docs/Match.md)
  - [MatchAlliance](docs/MatchAlliance.md)

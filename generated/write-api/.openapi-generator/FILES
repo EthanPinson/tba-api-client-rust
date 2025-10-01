@@ -7,6 +7,7 @@ docs/EventAlliancesApi.md
 docs/EventAwardsApi.md
 docs/EventDetailsApi.md
 docs/EventInfo.md
+docs/EventInfoDisableSync.md
 docs/EventInfoWebcastsInner.md
 docs/EventMatchesApi.md
 docs/EventMediaApi.md
@@ -32,6 +33,7 @@ src/apis/team_list_api.rs
 src/lib.rs
 src/models/award.rs
 src/models/event_info.rs
+src/models/event_info_disable_sync.rs
 src/models/event_info_webcasts_inner.rs
 src/models/match_alliance.rs
 src/models/match_alliances.rs

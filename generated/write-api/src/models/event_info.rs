@@ -17,8 +17,8 @@ pub struct EventInfo {
     #[serde(rename = "first_code", skip_serializing_if = "Option::is_none")]
     pub first_code: Option<String>,
     /// Integer constant representing the playoff format. References constants here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py
-    #[serde(rename = "playoff_type", skip_serializing_if = "Option::is_none")]
-    pub playoff_type: Option<i32>,
+    #[serde(rename = "playoff_type", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub playoff_type: Option<Option<i32>>,
     /// A list of webcast URLs to set for this event. This will overwrite the existing webcast list
     #[serde(rename = "webcasts", skip_serializing_if = "Option::is_none")]
     pub webcasts: Option<Vec<models::EventInfoWebcastsInner>>,
@@ -28,6 +28,8 @@ pub struct EventInfo {
     /// Timezone name for the event
     #[serde(rename = "timezone", skip_serializing_if = "Option::is_none")]
     pub timezone: Option<String>,
+    #[serde(rename = "disable_sync", skip_serializing_if = "Option::is_none")]
+    pub disable_sync: Option<Box<models::EventInfoDisableSync>>,
 }
 
 impl EventInfo {
@@ -38,6 +40,7 @@ impl EventInfo {
             webcasts: None,
             remap_teams: None,
             timezone: None,
+            disable_sync: None,
         }
     }
 }
