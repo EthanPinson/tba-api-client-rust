@@ -28,10 +28,10 @@ pub enum UpdateRankingsError {
 /// Update rankings at an event
 pub async fn update_rankings(configuration: &configuration::Configuration, event_key: &str, update_rankings_request: models::UpdateRankingsRequest) -> Result<(), Error<UpdateRankingsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_update_rankings_request = update_rankings_request;
+    let p_path_event_key = event_key;
+    let p_body_update_rankings_request = update_rankings_request;
 
-    let uri_str = format!("{}/event/{eventKey}/rankings/update", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/rankings/update", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -53,7 +53,7 @@ pub async fn update_rankings(configuration: &configuration::Configuration, event
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_update_rankings_request);
+    req_builder = req_builder.json(&p_body_update_rankings_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

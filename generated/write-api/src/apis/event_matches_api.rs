@@ -37,10 +37,10 @@ pub enum UpdateMatchesError {
 /// Delete one or more matches under an event.
 pub async fn delete_matches(configuration: &configuration::Configuration, event_key: &str, request_body: Vec<String>) -> Result<(), Error<DeleteMatchesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_request_body = request_body;
+    let p_path_event_key = event_key;
+    let p_body_request_body = request_body;
 
-    let uri_str = format!("{}/event/{eventKey}/matches/delete", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/matches/delete", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -62,7 +62,7 @@ pub async fn delete_matches(configuration: &configuration::Configuration, event_
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_request_body);
+    req_builder = req_builder.json(&p_body_request_body);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -81,10 +81,10 @@ pub async fn delete_matches(configuration: &configuration::Configuration, event_
 /// Add/Update one or more matches under an event.
 pub async fn update_matches(configuration: &configuration::Configuration, event_key: &str, r#match: Vec<models::Match>) -> Result<(), Error<UpdateMatchesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_match = r#match;
+    let p_path_event_key = event_key;
+    let p_body_match = r#match;
 
-    let uri_str = format!("{}/event/{eventKey}/matches/update", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/matches/update", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -106,7 +106,7 @@ pub async fn update_matches(configuration: &configuration::Configuration, event_
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_match);
+    req_builder = req_builder.json(&p_body_match);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

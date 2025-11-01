@@ -37,16 +37,16 @@ pub enum GetInsightsNotablesYearError {
 /// Gets a list of `LeaderboardInsight` objects from a specific year. Use year=0 for overall.
 pub async fn get_insights_leaderboards_year(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::LeaderboardInsight>, Error<GetInsightsLeaderboardsYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/insights/leaderboards/{year}", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/insights/leaderboards/{year}", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -86,16 +86,16 @@ pub async fn get_insights_leaderboards_year(configuration: &configuration::Confi
 /// Gets a list of `NotablesInsight` objects from a specific year. Use year=0 for overall.
 pub async fn get_insights_notables_year(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::NotablesInsight>, Error<GetInsightsNotablesYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/insights/notables/{year}", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/insights/notables/{year}", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {

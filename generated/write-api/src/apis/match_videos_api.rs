@@ -28,10 +28,10 @@ pub enum UpdateMatchVideosError {
 /// Link YouTube videos to a match
 pub async fn update_match_videos(configuration: &configuration::Configuration, event_key: &str, body: &str) -> Result<(), Error<UpdateMatchVideosError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_body = body;
+    let p_path_event_key = event_key;
+    let p_body_body = body;
 
-    let uri_str = format!("{}/event/{eventKey}/match_videos/add", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/match_videos/add", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -53,7 +53,7 @@ pub async fn update_match_videos(configuration: &configuration::Configuration, e
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_body);
+    req_builder = req_builder.json(&p_body_body);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

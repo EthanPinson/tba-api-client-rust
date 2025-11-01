@@ -28,10 +28,10 @@ pub enum UpdateAwardsError {
 /// Overwrite the event's award listing.
 pub async fn update_awards(configuration: &configuration::Configuration, event_key: &str, award: Vec<models::Award>) -> Result<(), Error<UpdateAwardsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_award = award;
+    let p_path_event_key = event_key;
+    let p_body_award = award;
 
-    let uri_str = format!("{}/event/{eventKey}/awards/update", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/awards/update", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -53,7 +53,7 @@ pub async fn update_awards(configuration: &configuration::Configuration, event_k
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_award);
+    req_builder = req_builder.json(&p_body_award);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

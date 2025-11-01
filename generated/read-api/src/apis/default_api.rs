@@ -28,7 +28,7 @@ pub enum GetSearchIndexError {
 /// Gets a large blob of data that is used on the frontend for searching. May change without notice.
 pub async fn get_search_index(configuration: &configuration::Configuration, if_none_match: Option<&str>) -> Result<models::SearchIndex, Error<GetSearchIndexError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_if_none_match = if_none_match;
+    let p_header_if_none_match = if_none_match;
 
     let uri_str = format!("{}/search_index", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
@@ -36,7 +36,7 @@ pub async fn get_search_index(configuration: &configuration::Configuration, if_n
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {

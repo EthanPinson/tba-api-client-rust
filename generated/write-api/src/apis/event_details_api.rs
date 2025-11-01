@@ -28,10 +28,10 @@ pub enum UpdateEventInfoError {
 /// An endpoint to overwrite certain event fields. All fields are optional, set only the ones you wish to update
 pub async fn update_event_info(configuration: &configuration::Configuration, event_key: &str, event_info: models::EventInfo) -> Result<(), Error<UpdateEventInfoError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_event_info = event_info;
+    let p_path_event_key = event_key;
+    let p_body_event_info = event_info;
 
-    let uri_str = format!("{}/event/{eventKey}/info/update", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/info/update", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -53,7 +53,7 @@ pub async fn update_event_info(configuration: &configuration::Configuration, eve
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_event_info);
+    req_builder = req_builder.json(&p_body_event_info);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

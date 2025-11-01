@@ -262,16 +262,16 @@ pub enum GetTeamsSimpleError {
 /// Gets a list of advancement information per team in a district.
 pub async fn get_district_advancement(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<std::collections::HashMap<String, models::DistrictAdvancement>, Error<GetDistrictAdvancementError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/advancement", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/advancement", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -311,16 +311,16 @@ pub async fn get_district_advancement(configuration: &configuration::Configurati
 /// Gets a list of awards in the given district.
 pub async fn get_district_awards(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::Award>, Error<GetDistrictAwardsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/awards", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/awards", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -360,16 +360,16 @@ pub async fn get_district_awards(configuration: &configuration::Configuration, d
 /// Gets a list of events in the given district.
 pub async fn get_district_events(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::Event>, Error<GetDistrictEventsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/events", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/events", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -409,16 +409,16 @@ pub async fn get_district_events(configuration: &configuration::Configuration, d
 /// Gets a list of event keys for events in the given district.
 pub async fn get_district_events_keys(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<String>, Error<GetDistrictEventsKeysError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/events/keys", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/events/keys", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -458,16 +458,16 @@ pub async fn get_district_events_keys(configuration: &configuration::Configurati
 /// Gets a short-form list of events in the given district.
 pub async fn get_district_events_simple(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::EventSimple>, Error<GetDistrictEventsSimpleError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/events/simple", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/events/simple", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -507,16 +507,16 @@ pub async fn get_district_events_simple(configuration: &configuration::Configura
 /// Gets a list of team district rankings for the given district.
 pub async fn get_district_rankings(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::DistrictRanking>, Error<GetDistrictRankingsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/rankings", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/rankings", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -556,16 +556,16 @@ pub async fn get_district_rankings(configuration: &configuration::Configuration,
 /// Gets a list of `Team` objects that competed in events in the given district.
 pub async fn get_district_teams(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::Team>, Error<GetDistrictTeamsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/teams", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/teams", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -605,16 +605,16 @@ pub async fn get_district_teams(configuration: &configuration::Configuration, di
 /// Gets a list of `Team` objects that competed in events in the given district.
 pub async fn get_district_teams_keys(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<String>, Error<GetDistrictTeamsKeysError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/teams/keys", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/teams/keys", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -654,16 +654,16 @@ pub async fn get_district_teams_keys(configuration: &configuration::Configuratio
 /// Gets a short-form list of `Team` objects that competed in events in the given district.
 pub async fn get_district_teams_simple(configuration: &configuration::Configuration, district_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::TeamSimple>, Error<GetDistrictTeamsSimpleError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_district_key = district_key;
-    let p_if_none_match = if_none_match;
+    let p_path_district_key = district_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/district/{district_key}/teams/simple", configuration.base_path, district_key=crate::apis::urlencode(p_district_key));
+    let uri_str = format!("{}/district/{district_key}/teams/simple", configuration.base_path, district_key=crate::apis::urlencode(p_path_district_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -703,16 +703,16 @@ pub async fn get_district_teams_simple(configuration: &configuration::Configurat
 /// Gets a list of `Team` objects that competed in the given event.
 pub async fn get_event_teams(configuration: &configuration::Configuration, event_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::Team>, Error<GetEventTeamsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_if_none_match = if_none_match;
+    let p_path_event_key = event_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/event/{event_key}/teams", configuration.base_path, event_key=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{event_key}/teams", configuration.base_path, event_key=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -752,16 +752,16 @@ pub async fn get_event_teams(configuration: &configuration::Configuration, event
 /// Gets a list of `Team` keys that competed in the given event.
 pub async fn get_event_teams_keys(configuration: &configuration::Configuration, event_key: &str, if_none_match: Option<&str>) -> Result<Vec<String>, Error<GetEventTeamsKeysError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_if_none_match = if_none_match;
+    let p_path_event_key = event_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/event/{event_key}/teams/keys", configuration.base_path, event_key=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{event_key}/teams/keys", configuration.base_path, event_key=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -801,16 +801,16 @@ pub async fn get_event_teams_keys(configuration: &configuration::Configuration, 
 /// Gets a short-form list of `Team` objects that competed in the given event.
 pub async fn get_event_teams_simple(configuration: &configuration::Configuration, event_key: &str, if_none_match: Option<&str>) -> Result<Vec<models::TeamSimple>, Error<GetEventTeamsSimpleError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_if_none_match = if_none_match;
+    let p_path_event_key = event_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/event/{event_key}/teams/simple", configuration.base_path, event_key=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{event_key}/teams/simple", configuration.base_path, event_key=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -850,16 +850,16 @@ pub async fn get_event_teams_simple(configuration: &configuration::Configuration
 /// Gets a key-value list of the event statuses for teams competing at the given event.
 pub async fn get_event_teams_statuses(configuration: &configuration::Configuration, event_key: &str, if_none_match: Option<&str>) -> Result<std::collections::HashMap<String, models::TeamEventStatus>, Error<GetEventTeamsStatusesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_if_none_match = if_none_match;
+    let p_path_event_key = event_key;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/event/{event_key}/teams/statuses", configuration.base_path, event_key=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{event_key}/teams/statuses", configuration.base_path, event_key=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -899,16 +899,16 @@ pub async fn get_event_teams_statuses(configuration: &configuration::Configurati
 /// Gets a list of events in the given year.
 pub async fn get_events_by_year(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::Event>, Error<GetEventsByYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/events/{year}", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/events/{year}", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -948,16 +948,16 @@ pub async fn get_events_by_year(configuration: &configuration::Configuration, ye
 /// Gets a list of event keys in the given year.
 pub async fn get_events_by_year_keys(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<String>, Error<GetEventsByYearKeysError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/events/{year}/keys", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/events/{year}/keys", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -997,16 +997,16 @@ pub async fn get_events_by_year_keys(configuration: &configuration::Configuratio
 /// Gets a short-form list of events in the given year.
 pub async fn get_events_by_year_simple(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::EventSimple>, Error<GetEventsByYearSimpleError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/events/{year}/simple", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/events/{year}/simple", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1046,16 +1046,16 @@ pub async fn get_events_by_year_simple(configuration: &configuration::Configurat
 /// Gets a list of `LeaderboardInsight` objects from a specific year. Use year=0 for overall.
 pub async fn get_insights_leaderboards_year(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::LeaderboardInsight>, Error<GetInsightsLeaderboardsYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/insights/leaderboards/{year}", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/insights/leaderboards/{year}", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1095,16 +1095,16 @@ pub async fn get_insights_leaderboards_year(configuration: &configuration::Confi
 /// Gets a list of `NotablesInsight` objects from a specific year. Use year=0 for overall.
 pub async fn get_insights_notables_year(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::NotablesInsight>, Error<GetInsightsNotablesYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/insights/notables/{year}", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/insights/notables/{year}", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1144,16 +1144,16 @@ pub async fn get_insights_notables_year(configuration: &configuration::Configura
 /// Gets information about per-team advancement to the FIRST Championship.
 pub async fn get_regional_advancement(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<std::collections::HashMap<String, models::RegionalAdvancement>, Error<GetRegionalAdvancementError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/regional_advancement/{year}", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/regional_advancement/{year}", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1193,16 +1193,16 @@ pub async fn get_regional_advancement(configuration: &configuration::Configurati
 /// Gets the team rankings in the regional pool for a specific year.
 pub async fn get_regional_rankings(configuration: &configuration::Configuration, year: i32, if_none_match: Option<&str>) -> Result<Vec<models::RegionalRanking>, Error<GetRegionalRankingsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/regional_advancement/{year}/rankings", configuration.base_path, year=p_year);
+    let uri_str = format!("{}/regional_advancement/{year}/rankings", configuration.base_path, year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1242,17 +1242,17 @@ pub async fn get_regional_rankings(configuration: &configuration::Configuration,
 /// Gets a key-value list of the event statuses for events this team has competed at in the given year.
 pub async fn get_team_events_statuses_by_year(configuration: &configuration::Configuration, team_key: &str, year: i32, if_none_match: Option<&str>) -> Result<std::collections::HashMap<String, models::TeamEventStatus>, Error<GetTeamEventsStatusesByYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_team_key = team_key;
-    let p_year = year;
-    let p_if_none_match = if_none_match;
+    let p_path_team_key = team_key;
+    let p_path_year = year;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/team/{team_key}/events/{year}/statuses", configuration.base_path, team_key=crate::apis::urlencode(p_team_key), year=p_year);
+    let uri_str = format!("{}/team/{team_key}/events/{year}/statuses", configuration.base_path, team_key=crate::apis::urlencode(p_path_team_key), year=p_path_year);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1292,16 +1292,16 @@ pub async fn get_team_events_statuses_by_year(configuration: &configuration::Con
 /// Gets a list of `Team` objects, paginated in groups of 500.
 pub async fn get_teams(configuration: &configuration::Configuration, page_num: i32, if_none_match: Option<&str>) -> Result<Vec<models::Team>, Error<GetTeamsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_page_num = page_num;
-    let p_if_none_match = if_none_match;
+    let p_path_page_num = page_num;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/teams/{page_num}", configuration.base_path, page_num=p_page_num);
+    let uri_str = format!("{}/teams/{page_num}", configuration.base_path, page_num=p_path_page_num);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1341,17 +1341,17 @@ pub async fn get_teams(configuration: &configuration::Configuration, page_num: i
 /// Gets a list of `Team` objects that competed in the given year, paginated in groups of 500.
 pub async fn get_teams_by_year(configuration: &configuration::Configuration, year: i32, page_num: i32, if_none_match: Option<&str>) -> Result<Vec<models::Team>, Error<GetTeamsByYearError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_page_num = page_num;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_path_page_num = page_num;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/teams/{year}/{page_num}", configuration.base_path, year=p_year, page_num=p_page_num);
+    let uri_str = format!("{}/teams/{year}/{page_num}", configuration.base_path, year=p_path_year, page_num=p_path_page_num);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1391,17 +1391,17 @@ pub async fn get_teams_by_year(configuration: &configuration::Configuration, yea
 /// Gets a list Team Keys that competed in the given year, paginated in groups of 500.
 pub async fn get_teams_by_year_keys(configuration: &configuration::Configuration, year: i32, page_num: i32, if_none_match: Option<&str>) -> Result<Vec<String>, Error<GetTeamsByYearKeysError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_page_num = page_num;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_path_page_num = page_num;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/teams/{year}/{page_num}/keys", configuration.base_path, year=p_year, page_num=p_page_num);
+    let uri_str = format!("{}/teams/{year}/{page_num}/keys", configuration.base_path, year=p_path_year, page_num=p_path_page_num);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1441,17 +1441,17 @@ pub async fn get_teams_by_year_keys(configuration: &configuration::Configuration
 /// Gets a list of short form `Team_Simple` objects that competed in the given year, paginated in groups of 500.
 pub async fn get_teams_by_year_simple(configuration: &configuration::Configuration, year: i32, page_num: i32, if_none_match: Option<&str>) -> Result<Vec<models::TeamSimple>, Error<GetTeamsByYearSimpleError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_year = year;
-    let p_page_num = page_num;
-    let p_if_none_match = if_none_match;
+    let p_path_year = year;
+    let p_path_page_num = page_num;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/teams/{year}/{page_num}/simple", configuration.base_path, year=p_year, page_num=p_page_num);
+    let uri_str = format!("{}/teams/{year}/{page_num}/simple", configuration.base_path, year=p_path_year, page_num=p_path_page_num);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1491,16 +1491,16 @@ pub async fn get_teams_by_year_simple(configuration: &configuration::Configurati
 /// Gets a list of Team keys, paginated in groups of 500. (Note, each page will not have 500 teams, but will include the teams within that range of 500.)
 pub async fn get_teams_keys(configuration: &configuration::Configuration, page_num: i32, if_none_match: Option<&str>) -> Result<Vec<String>, Error<GetTeamsKeysError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_page_num = page_num;
-    let p_if_none_match = if_none_match;
+    let p_path_page_num = page_num;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/teams/{page_num}/keys", configuration.base_path, page_num=p_page_num);
+    let uri_str = format!("{}/teams/{page_num}/keys", configuration.base_path, page_num=p_path_page_num);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {
@@ -1540,16 +1540,16 @@ pub async fn get_teams_keys(configuration: &configuration::Configuration, page_n
 /// Gets a list of short form `Team_Simple` objects, paginated in groups of 500.
 pub async fn get_teams_simple(configuration: &configuration::Configuration, page_num: i32, if_none_match: Option<&str>) -> Result<Vec<models::TeamSimple>, Error<GetTeamsSimpleError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_page_num = page_num;
-    let p_if_none_match = if_none_match;
+    let p_path_page_num = page_num;
+    let p_header_if_none_match = if_none_match;
 
-    let uri_str = format!("{}/teams/{page_num}/simple", configuration.base_path, page_num=p_page_num);
+    let uri_str = format!("{}/teams/{page_num}/simple", configuration.base_path, page_num=p_path_page_num);
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }
-    if let Some(param_value) = p_if_none_match {
+    if let Some(param_value) = p_header_if_none_match {
         req_builder = req_builder.header("If-None-Match", param_value.to_string());
     }
     if let Some(ref apikey) = configuration.api_key {

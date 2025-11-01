@@ -28,10 +28,10 @@ pub enum UpdateEventMediaError {
 /// Link YouTube videos to an event
 pub async fn update_event_media(configuration: &configuration::Configuration, event_key: &str, request_body: Vec<String>) -> Result<(), Error<UpdateEventMediaError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_event_key = event_key;
-    let p_request_body = request_body;
+    let p_path_event_key = event_key;
+    let p_body_request_body = request_body;
 
-    let uri_str = format!("{}/event/{eventKey}/media/add", configuration.base_path, eventKey=crate::apis::urlencode(p_event_key));
+    let uri_str = format!("{}/event/{eventKey}/media/add", configuration.base_path, eventKey=crate::apis::urlencode(p_path_event_key));
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref user_agent) = configuration.user_agent {
@@ -53,7 +53,7 @@ pub async fn update_event_media(configuration: &configuration::Configuration, ev
         };
         req_builder = req_builder.header("X-TBA-Auth-Sig", value);
     };
-    req_builder = req_builder.json(&p_request_body);
+    req_builder = req_builder.json(&p_body_request_body);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
