@@ -20,16 +20,16 @@ pub struct TeamEventStatusRankRanking {
     #[serde(rename = "qual_average", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub qual_average: Option<Option<f64>>,
     /// Ordered list of values used to determine the rank. See the `sort_order_info` property for the name of each value.
-    #[serde(rename = "sort_orders", skip_serializing_if = "Option::is_none")]
-    pub sort_orders: Option<Vec<f64>>,
+    #[serde(rename = "sort_orders", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub sort_orders: Option<Option<Vec<f64>>>,
     #[serde(rename = "record", skip_serializing_if = "Option::is_none")]
     pub record: Option<Box<models::WltRecord>>,
     /// Relative rank of this team.
-    #[serde(rename = "rank", skip_serializing_if = "Option::is_none")]
-    pub rank: Option<i32>,
+    #[serde(rename = "rank", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub rank: Option<Option<i32>>,
     /// Number of matches the team was disqualified for.
-    #[serde(rename = "dq", skip_serializing_if = "Option::is_none")]
-    pub dq: Option<i32>,
+    #[serde(rename = "dq", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub dq: Option<Option<i32>>,
     /// TBA team key for this rank.
     #[serde(rename = "team_key", skip_serializing_if = "Option::is_none")]
     pub team_key: Option<String>,

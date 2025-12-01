@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **webcasts** | [**Vec<models::Webcast>**](Webcast.md) |  | 
 **division_keys** | **Vec<String>** | An array of event keys for the divisions at this event. | 
 **parent_event_key** | Option<**String**> | The TBA Event key that represents the event's parent. Used to link back to the event from a division event. It is also the inverse relation of `divison_keys`. | 
-**playoff_type** | Option<**i32**> | Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null. | 
+**playoff_type** | Option<**i32**> | Playoff Type, as defined under `PlayoffType`: https://github.com/the-blue-alliance/the-blue-alliance/blob/py3/src/backend/common/consts/playoff_type.py#L37, or null. | 
 **playoff_type_string** | Option<**String**> | String representation of the `playoff_type`, or null. | 
 **remap_teams** | **std::collections::HashMap<String, String>** | Map of temporary \"off-season demo\" team numbers to pre-rookie and B teams. Both keys and values are team keys in the format 'frc####'. Key is the old team key ('frc' + numeric only), value is the new team key ('frc' + numeric + may include a letter suffix). | 
 

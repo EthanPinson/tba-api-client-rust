@@ -39,6 +39,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EventAlliancesApi* | [**update_alliances**](docs/EventAlliancesApi.md#update_alliances) | **POST** /event/{eventKey}/alliance_selections/update | Update the alliance selections at an event
 *EventAwardsApi* | [**update_awards**](docs/EventAwardsApi.md#update_awards) | **POST** /event/{eventKey}/awards/update | Update the award listing at an event
+*EventDetailsApi* | [**get_event_info**](docs/EventDetailsApi.md#get_event_info) | **GET** /event/{eventKey}/info | Fetch top-level admin properties for the event
 *EventDetailsApi* | [**update_event_info**](docs/EventDetailsApi.md#update_event_info) | **POST** /event/{eventKey}/info/update | Update top-level properties for the event
 *EventMatchesApi* | [**delete_matches**](docs/EventMatchesApi.md#delete_matches) | **POST** /event/{eventKey}/matches/delete | Delete matches at an event
 *EventMatchesApi* | [**update_matches**](docs/EventMatchesApi.md#update_matches) | **POST** /event/{eventKey}/matches/update | Update matches at an event

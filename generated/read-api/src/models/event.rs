@@ -95,7 +95,7 @@ pub struct Event {
     /// The TBA Event key that represents the event's parent. Used to link back to the event from a division event. It is also the inverse relation of `divison_keys`.
     #[serde(rename = "parent_event_key", deserialize_with = "Option::deserialize")]
     pub parent_event_key: Option<String>,
-    /// Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null.
+    /// Playoff Type, as defined under `PlayoffType`: https://github.com/the-blue-alliance/the-blue-alliance/blob/py3/src/backend/common/consts/playoff_type.py#L37, or null.
     #[serde(rename = "playoff_type", deserialize_with = "Option::deserialize")]
     pub playoff_type: Option<i32>,
     /// String representation of the `playoff_type`, or null.

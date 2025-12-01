@@ -19,8 +19,8 @@ pub struct TeamEventStatusRank {
     #[serde(rename = "ranking", skip_serializing_if = "Option::is_none")]
     pub ranking: Option<Box<models::TeamEventStatusRankRanking>>,
     /// Ordered list of names corresponding to the elements of the `sort_orders` array.
-    #[serde(rename = "sort_order_info", skip_serializing_if = "Option::is_none")]
-    pub sort_order_info: Option<Vec<models::TeamEventStatusRankSortOrderInfoInner>>,
+    #[serde(rename = "sort_order_info", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub sort_order_info: Option<Option<Vec<models::TeamEventStatusRankSortOrderInfoInner>>>,
     #[serde(rename = "status", skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
 }
