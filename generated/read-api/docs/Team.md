@@ -19,8 +19,9 @@ Name | Type | Description | Notes
 **lat** | Option<**f64**> | Will be NULL, for future development. | 
 **lng** | Option<**f64**> | Will be NULL, for future development. | 
 **location_name** | Option<**String**> | Will be NULL, for future development. | 
-**website** | Option<**String**> | Official website associated with the team. | [optional]
+**website** | Option<**String**> | Official website associated with the team. | 
 **rookie_year** | Option<**i32**> | First year the team officially competed. | 
+**motto** | Option<**String**> | Team's motto or tagline. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

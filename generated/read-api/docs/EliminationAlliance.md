@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | Option<**String**> | Alliance name, may be null. | [optional]
+**name** | Option<**String**> | Alliance name. | [optional]
 **backup** | Option<[**models::EliminationAllianceBackup**](Elimination_Alliance_backup.md)> |  | [optional]
 **declines** | **Vec<String>** | List of teams that declined the alliance. | 
 **picks** | **Vec<String>** | List of team keys picked for the alliance. First pick is captain. | 

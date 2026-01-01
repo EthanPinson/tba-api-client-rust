@@ -115,7 +115,6 @@ pub mod default_api;
 pub mod district_api;
 pub mod event_api;
 pub mod insight_api;
-pub mod list_api;
 pub mod match_api;
 pub mod regional_advancement_api;
 pub mod tba_api;

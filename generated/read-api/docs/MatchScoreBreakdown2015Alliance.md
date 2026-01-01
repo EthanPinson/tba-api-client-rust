@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**auto** | Option<**String**> |  | [optional]
 **auto_points** | Option<**i32**> |  | [optional]
 **teleop_points** | Option<**i32**> |  | [optional]
 **container_points** | Option<**i32**> |  | [optional]
 **tote_points** | Option<**i32**> |  | [optional]
 **litter_points** | Option<**i32**> |  | [optional]
+**foul** | Option<**String**> |  | [optional]
 **foul_points** | Option<**i32**> |  | [optional]
 **adjust_points** | Option<**i32**> |  | [optional]
 **total_points** | Option<**i32**> |  | [optional]
