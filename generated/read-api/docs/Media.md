@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**r#type** | **String** | String type of the media element. | 
+**r#type** | **Type** | String type of the media element. (enum: youtube, cdphotothread, imgur, facebook-profile, youtube-channel, twitter-profile, github-profile, instagram-profile, periscope-profile, gitlab-profile, grabcad, instagram-image, external-link, avatar, onshape, cd-thread) | 
 **foreign_key** | **String** | The key used to identify this media on the media site. | 
-**details** | Option<[**models::MediaDetails**](Media_details.md)> |  | [optional]
+**details** | Option<[**models::MediaDetails**](MediaDetails.md)> |  | [optional]
 **preferred** | Option<**bool**> | True if the media is of high quality. | [optional]
 **team_keys** | **Vec<String>** | List of teams that this media belongs to. Most likely length 1. | 
 **direct_url** | Option<**String**> | Direct URL to the media. | [optional]

@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **dcmp_wins** | **i32** |  | 
 **team_awards** | **i32** |  | 
 **individual_awards** | **i32** |  | 
-**quals_record** | [**models::WltRecord**](WLT_Record.md) |  | 
-**elims_record** | [**models::WltRecord**](WLT_Record.md) |  | 
+**quals_record** | [**models::WltRecord**](WLTRecord.md) |  | 
+**elims_record** | [**models::WltRecord**](WLTRecord.md) |  | 
 **in_district_extra_play_count** | **i32** |  | 
 **total_matches_played** | **i32** |  | 
 **dcmp_appearances** | **i32** |  | 

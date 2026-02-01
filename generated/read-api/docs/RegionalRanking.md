@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **rookie_bonus** | Option<**i32**> | Any points added to a team as a result of the rookie bonus. | [optional]
 **single_event_bonus** | Option<**i32**> | Additional points awarded in lieu of a second event, based on first event performance | [optional]
 **point_total** | **i32** | Total district points for the team. | 
-**event_points** | Option<[**Vec<models::RegionalRankingEventPointsInner>**](Regional_Ranking_event_points_inner.md)> | List of events that contributed to the point total for the team. | [optional]
+**event_points** | Option<[**Vec<models::RegionalRankingEventPointsInner>**](RegionalRankingEventPointsInner.md)> | List of events that contributed to the point total for the team. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cmp** | **bool** | Whether or not the team qualified for Championship. | 
-**cmp_status** | **String** |  | 
+**cmp_status** | **CmpStatus** |  (enum: NotInvited, PreQualified, EventQualified, PoolQualified, Declined) | 
 **qualifying_event** | Option<**String**> | The event key at which the team qualified | [optional]
 **qualifying_award_name** | Option<**String**> | The name of the award which qualified the team | [optional]
 **qualifying_pool_week** | Option<**i32**> | Which week number's regional pool invitation the team got | [optional]

@@ -52,6 +52,7 @@ docs/EventSimple.md
 docs/GetDistrictDcmpHistory200ResponseInner.md
 docs/HabLine2019.md
 docs/History.md
+docs/HubScore2026.md
 docs/InitLineRobot2020.md
 docs/InlineObject.md
 docs/InsightApi.md
@@ -86,6 +87,8 @@ docs/MatchScoreBreakdown2024Alliance.md
 docs/MatchScoreBreakdown2025.md
 docs/MatchScoreBreakdown2025Alliance.md
 docs/MatchScoreBreakdown2025AllianceAutoReef.md
+docs/MatchScoreBreakdown2026.md
+docs/MatchScoreBreakdown2026Alliance.md
 docs/MatchSimple.md
 docs/MatchTimeseries2018.md
 docs/MatchVideosInner.md
@@ -127,6 +130,7 @@ docs/TeamRobot.md
 docs/TeamSimple.md
 docs/Touchpad2017.md
 docs/TowerFace2016.md
+docs/TowerRobot2026.md
 docs/Webcast.md
 docs/WltRecord.md
 docs/Zebra.md
@@ -191,6 +195,7 @@ src/models/event_simple.rs
 src/models/get_district_dcmp_history_200_response_inner.rs
 src/models/hab_line_2019.rs
 src/models/history.rs
+src/models/hub_score_2026.rs
 src/models/init_line_robot_2020.rs
 src/models/inline_object.rs
 src/models/leaderboard_insight.rs
@@ -222,6 +227,8 @@ src/models/match_score_breakdown_2024_alliance.rs
 src/models/match_score_breakdown_2025.rs
 src/models/match_score_breakdown_2025_alliance.rs
 src/models/match_score_breakdown_2025_alliance_auto_reef.rs
+src/models/match_score_breakdown_2026.rs
+src/models/match_score_breakdown_2026_alliance.rs
 src/models/match_simple.rs
 src/models/match_timeseries_2018.rs
 src/models/match_videos_inner.rs
@@ -262,6 +269,7 @@ src/models/team_robot.rs
 src/models/team_simple.rs
 src/models/touchpad_2017.rs
 src/models/tower_face_2016.rs
+src/models/tower_robot_2026.rs
 src/models/webcast.rs
 src/models/wlt_record.rs
 src/models/zebra.rs

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**models::NotablesInsightData**](NotablesInsight_data.md) |  | 
+**data** | [**models::NotablesInsightData**](NotablesInsightData.md) |  | 
 **name** | **String** |  | 
 **year** | **i32** |  | 
 

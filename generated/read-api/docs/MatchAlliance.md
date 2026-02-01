@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**score** | **i32** | Score for this alliance. Will be null or -1 for an unplayed match. | 
+**score** | **i32** | Score for this alliance. Will be -1 for an unplayed match. | 
 **team_keys** | **Vec<String>** |  | 
 **surrogate_team_keys** | **Vec<String>** | TBA team keys (eg `frc254`) of any teams playing as a surrogate. | 
 **dq_team_keys** | **Vec<String>** | TBA team keys (eg `frc254`) of any disqualified teams. | 

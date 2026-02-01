@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**models::LeaderboardInsightData**](LeaderboardInsight_data.md) |  | 
+**data** | [**models::LeaderboardInsightData**](LeaderboardInsightData.md) |  | 
 **name** | **String** | Name of the insight. | 
 **year** | **i32** | Year the insight was measured in (year=0 for overall insights). | 
 

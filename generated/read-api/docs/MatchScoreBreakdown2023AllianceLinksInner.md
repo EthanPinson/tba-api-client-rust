@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nodes** | **Vec<String>** |  | 
-**row** | **String** |  | 
+**nodes** | **Vec<Nodes>** |  (enum: None, Cone, Cube) | 
+**row** | **Row** |  (enum: Bottom, Mid, Top) | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

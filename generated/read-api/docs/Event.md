@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **city** | Option<**String**> | City, town, village, etc. the event is located in. | 
 **state_prov** | Option<**String**> | State or Province the event is located in. | 
 **country** | Option<**String**> | Country the event is located in. | 
-**start_date** | [**String**](string.md) | Event start date in `yyyy-mm-dd` format. | 
-**end_date** | [**String**](string.md) | Event end date in `yyyy-mm-dd` format. | 
+**start_date** | [**String**](String.md) | Event start date in `yyyy-mm-dd` format. | 
+**end_date** | [**String**](String.md) | Event end date in `yyyy-mm-dd` format. | 
 **year** | **i32** | Year the event data is for. | 
 **short_name** | Option<**String**> | Same as `name` but doesn't include event specifiers, such as 'Regional' or 'District'. May be null. | 
 **event_type_string** | **String** | Event Type, eg Regional, District, or Offseason. | 

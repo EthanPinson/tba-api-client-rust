@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**init_line_robot1** | [**models::InitLineRobot2020**](InitLineRobot_2020.md) |  | 
-**endgame_robot1** | [**models::EndgameRobot2020**](EndgameRobot_2020.md) |  | 
-**init_line_robot2** | [**models::InitLineRobot2020**](InitLineRobot_2020.md) |  | 
-**endgame_robot2** | [**models::EndgameRobot2020**](EndgameRobot_2020.md) |  | 
-**init_line_robot3** | [**models::InitLineRobot2020**](InitLineRobot_2020.md) |  | 
-**endgame_robot3** | [**models::EndgameRobot2020**](EndgameRobot_2020.md) |  | 
+**init_line_robot1** | [**models::InitLineRobot2020**](InitLineRobot2020.md) |  | 
+**endgame_robot1** | [**models::EndgameRobot2020**](EndgameRobot2020.md) |  | 
+**init_line_robot2** | [**models::InitLineRobot2020**](InitLineRobot2020.md) |  | 
+**endgame_robot2** | [**models::EndgameRobot2020**](EndgameRobot2020.md) |  | 
+**init_line_robot3** | [**models::InitLineRobot2020**](InitLineRobot2020.md) |  | 
+**endgame_robot3** | [**models::EndgameRobot2020**](EndgameRobot2020.md) |  | 
 **auto_cells_bottom** | **i32** |  | 
 **auto_cells_outer** | **i32** |  | 
 **auto_cells_inner** | **i32** |  | 
@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **stage1_activated** | **bool** |  | 
 **stage2_activated** | **bool** |  | 
 **stage3_activated** | **bool** |  | 
-**stage3_target_color** | [**models::Stage3TargetColor2020**](Stage3TargetColor_2020.md) |  | 
-**endgame_rung_is_level** | [**models::EndgameRungIsLevel2020**](EndgameRungIsLevel_2020.md) |  | 
+**stage3_target_color** | [**models::Stage3TargetColor2020**](Stage3TargetColor2020.md) |  | 
+**endgame_rung_is_level** | [**models::EndgameRungIsLevel2020**](EndgameRungIsLevel2020.md) |  | 
 **auto_init_line_points** | **i32** |  | 
 **auto_cell_points** | **i32** |  | 
 **auto_points** | **i32** |  | 

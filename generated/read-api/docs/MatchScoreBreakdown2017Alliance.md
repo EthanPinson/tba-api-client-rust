@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **foul_points** | **i32** |  | 
 **adjust_points** | Option<**i32**> |  | [optional]
 **total_points** | **i32** |  | 
-**robot1_auto** | Option<[**models::RobotAuto2017**](RobotAuto_2017.md)> |  | [optional]
-**robot2_auto** | Option<[**models::RobotAuto2017**](RobotAuto_2017.md)> |  | [optional]
-**robot3_auto** | Option<[**models::RobotAuto2017**](RobotAuto_2017.md)> |  | [optional]
+**robot1_auto** | Option<[**models::RobotAuto2017**](RobotAuto2017.md)> |  | [optional]
+**robot2_auto** | Option<[**models::RobotAuto2017**](RobotAuto2017.md)> |  | [optional]
+**robot3_auto** | Option<[**models::RobotAuto2017**](RobotAuto2017.md)> |  | [optional]
 **rotor1_auto** | **bool** |  | 
 **rotor2_auto** | **bool** |  | 
 **auto_fuel_low** | **i32** |  | 
@@ -35,9 +35,9 @@ Name | Type | Description | Notes
 **tba_rp_earned** | Option<**i32**> |  | [optional]
 **tech_foul_count** | Option<**i32**> |  | [optional]
 **foul_count** | Option<**i32**> |  | [optional]
-**touchpad_near** | Option<[**models::Touchpad2017**](Touchpad_2017.md)> |  | [optional]
-**touchpad_middle** | Option<[**models::Touchpad2017**](Touchpad_2017.md)> |  | [optional]
-**touchpad_far** | Option<[**models::Touchpad2017**](Touchpad_2017.md)> |  | [optional]
+**touchpad_near** | Option<[**models::Touchpad2017**](Touchpad2017.md)> |  | [optional]
+**touchpad_middle** | Option<[**models::Touchpad2017**](Touchpad2017.md)> |  | [optional]
+**touchpad_far** | Option<[**models::Touchpad2017**](Touchpad2017.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

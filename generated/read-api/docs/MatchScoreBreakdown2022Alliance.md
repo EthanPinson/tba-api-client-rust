@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**taxi_robot1** | Option<[**models::TaxiRobot2022**](TaxiRobot_2022.md)> |  | [optional]
-**endgame_robot1** | Option<[**models::EndgameRobot2022**](EndgameRobot_2022.md)> |  | [optional]
-**taxi_robot2** | Option<[**models::TaxiRobot2022**](TaxiRobot_2022.md)> |  | [optional]
-**endgame_robot2** | Option<[**models::EndgameRobot2022**](EndgameRobot_2022.md)> |  | [optional]
-**taxi_robot3** | Option<[**models::TaxiRobot2022**](TaxiRobot_2022.md)> |  | [optional]
-**endgame_robot3** | Option<[**models::EndgameRobot2022**](EndgameRobot_2022.md)> |  | [optional]
+**taxi_robot1** | Option<[**models::TaxiRobot2022**](TaxiRobot2022.md)> |  | [optional]
+**endgame_robot1** | Option<[**models::EndgameRobot2022**](EndgameRobot2022.md)> |  | [optional]
+**taxi_robot2** | Option<[**models::TaxiRobot2022**](TaxiRobot2022.md)> |  | [optional]
+**endgame_robot2** | Option<[**models::EndgameRobot2022**](EndgameRobot2022.md)> |  | [optional]
+**taxi_robot3** | Option<[**models::TaxiRobot2022**](TaxiRobot2022.md)> |  | [optional]
+**endgame_robot3** | Option<[**models::EndgameRobot2022**](EndgameRobot2022.md)> |  | [optional]
 **auto_cargo_lower_near** | Option<**i32**> |  | [optional]
 **auto_cargo_lower_far** | Option<**i32**> |  | [optional]
 **auto_cargo_lower_blue** | Option<**i32**> |  | [optional]
