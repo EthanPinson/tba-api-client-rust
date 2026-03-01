@@ -117,6 +117,7 @@ pub mod event_details_api;
 pub mod event_matches_api;
 pub mod event_media_api;
 pub mod event_rankings_api;
+pub mod event_webcasts_api;
 pub mod match_videos_api;
 pub mod team_list_api;
 

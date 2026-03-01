@@ -26,6 +26,7 @@ pub enum MatchScoreBreakdown {
     MatchScoreBreakdown2023(Box<models::MatchScoreBreakdown2023>),
     MatchScoreBreakdown2024(Box<models::MatchScoreBreakdown2024>),
     MatchScoreBreakdown2025(Box<models::MatchScoreBreakdown2025>),
+    MatchScoreBreakdown2026(Box<models::MatchScoreBreakdown2026>),
 }
 
 impl Default for MatchScoreBreakdown {

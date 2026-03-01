@@ -25,6 +25,15 @@ pub struct Webcast {
     /// File identification as may be required for some types. May be null.
     #[serde(rename = "file", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub file: Option<Option<String>>,
+    /// The online status of the webcast, fetched from the streaming provider's API. May be null if not available.
+    #[serde(rename = "status", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub status: Option<Option<Status>>,
+    /// The title of the stream from the streaming provider. May be null.
+    #[serde(rename = "stream_title", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub stream_title: Option<Option<String>>,
+    /// The current viewer count from the streaming provider. May be null.
+    #[serde(rename = "viewer_count", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub viewer_count: Option<Option<i32>>,
 }
 
 impl Webcast {
@@ -34,6 +43,9 @@ impl Webcast {
             channel,
             date: None,
             file: None,
+            status: None,
+            stream_title: None,
+            viewer_count: None,
         }
     }
 }
@@ -69,6 +81,22 @@ pub enum Type {
 impl Default for Type {
     fn default() -> Type {
         Self::Youtube
+    }
+}
+/// The online status of the webcast, fetched from the streaming provider's API. May be null if not available.
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum Status {
+    #[serde(rename = "unknown")]
+    Unknown,
+    #[serde(rename = "online")]
+    Online,
+    #[serde(rename = "offline")]
+    Offline,
+}
+
+impl Default for Status {
+    fn default() -> Status {
+        Self::Unknown
     }
 }
 

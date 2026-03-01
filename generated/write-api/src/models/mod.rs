@@ -16,3 +16,7 @@ pub mod update_rankings_request;
 pub use self::update_rankings_request::UpdateRankingsRequest;
 pub mod update_rankings_request_rankings_inner;
 pub use self::update_rankings_request_rankings_inner::UpdateRankingsRequestRankingsInner;
+pub mod webcast;
+pub use self::webcast::Webcast;
+pub mod webcast_update;
+pub use self::webcast_update::WebcastUpdate;

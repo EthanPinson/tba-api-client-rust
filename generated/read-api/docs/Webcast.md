@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **channel** | **String** | Type specific channel information. May be the YouTube stream, or Twitch channel name. In the case of iframe types, contains HTML to embed the stream in an HTML iframe. | 
 **date** | Option<**String**> | The date for the webcast in `yyyy-mm-dd` format. May be null. | [optional]
 **file** | Option<**String**> | File identification as may be required for some types. May be null. | [optional]
+**status** | Option<**Status**> | The online status of the webcast, fetched from the streaming provider's API. May be null if not available. (enum: unknown, online, offline) | [optional]
+**stream_title** | Option<**String**> | The title of the stream from the streaming provider. May be null. | [optional]
+**viewer_count** | Option<**i32**> | The current viewer count from the streaming provider. May be null. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

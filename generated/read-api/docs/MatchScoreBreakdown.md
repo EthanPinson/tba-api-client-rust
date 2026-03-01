@@ -14,6 +14,7 @@
 | MatchScoreBreakdown2023 | Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null. |
 | MatchScoreBreakdown2024 | Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null. |
 | MatchScoreBreakdown2025 | Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null. |
+| MatchScoreBreakdown2026 | Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null. |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
